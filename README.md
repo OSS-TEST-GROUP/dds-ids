@@ -31,7 +31,7 @@ conan profile detect --force
 Conan 원격 저장소를 등록합니다.
 
 ```bash
-conan remote add oss http://192.168.18.12:8081/repository/oss/ --force
+conan remote add oss https://gitlab.com/api/v4/projects/83664124/packages/conan --force
 ```
 
 등록 결과를 확인합니다.
@@ -43,7 +43,7 @@ conan remote list
 기존 원격 저장소를 바꾸고 싶다면 다음처럼 갱신할 수 있습니다.
 
 ```bash
-conan remote update oss url http://192.168.18.12:8081/repository/oss/
+conan remote update oss url https://gitlab.com/api/v4/projects/83664124/packages/conan
 ```
 
 ## 4. 의존성 설치
