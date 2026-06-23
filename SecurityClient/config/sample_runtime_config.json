@@ -1,0 +1,63 @@
+{
+    "system": {
+        "client_id": "security-client-v2",
+        "log_level": "info"
+    },
+    "collection": {
+        "transports": [
+            {
+                "id": "dds-default",
+                "type": "dds",
+                "domain_id": 0
+            }
+        ],
+        "sources": [
+            {
+                "id": "door_switch",
+                "transport_id": "dds-default",
+                "topic": "rt/DoorSwitch",
+                "type": "DoorSwitch_",
+                "cache": {
+                    "mode": "latest",
+                    "ttl_ms": 3000
+                }
+            },
+            {
+                "id": "door_lock_indicator",
+                "transport_id": "dds-default",
+                "topic": "rt/DoorUnlockLockIndicator",
+                "type": "DoorUnlockLockIndicator_",
+                "cache": {
+                    "mode": "latest",
+                    "ttl_ms": 3000
+                }
+            }
+        ]
+    },
+    "analysis_detection": {
+        "detectors": [
+            {
+                "id": "door_lock_mismatch",
+                "type": "signal_mismatch",
+                "enabled": true,
+                "inputs": [
+                    "door_switch",
+                    "door_lock_indicator"
+                ],
+                "policy_ref": "host_ids.door_lock_rules"
+            }
+        ]
+    },
+    "alert_response": {
+        "alert_sinks": [
+            {
+                "id": "dds-report",
+                "type": "dds_detection_report",
+                "enabled": true,
+                "domain_id": 0,
+                "topic": "DetectionReport"
+            }
+        ],
+        "response_handlers": []
+    }
+}

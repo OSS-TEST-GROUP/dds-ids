@@ -1,0 +1,17 @@
+module sdv_vss {
+  module msg {
+    module dds_ {
+      struct DoorUnlockLockIndicator_
+      {
+        boolean na_0;
+        boolean na_1;
+        boolean na_2;
+        boolean na_3;
+        boolean vehicle_cabin_door_row1_left_is_locked;
+        boolean vehicle_cabin_door_row2_right_is_locked;
+        boolean na_6;
+        boolean na_7;
+      };
+    };
+  };
+};

@@ -1,0 +1,48 @@
+{
+    "HOST_IDS": [
+        {
+            "TOPIC_NAME": "rt/DoorUnlockLockIndicator",
+            "CUSTOM_RULE": [
+                {
+                    "SIGNAL": "vehicle_cabin_door_row1_left_is_locked",
+                    "SIGNAL_RULE": "TRUE",
+                    "COMPARE_TOPIC": "rt/DoorSwitch",
+                    "COMPARE_SIGNAL": "vehicle_sm_cabin_door_row1_left_is_locked",
+                    "COMPARE_SIGNAL_RULE": "TRUE",
+                    "RULE_ID": "100",
+                    "severity": "high"
+                }
+            ]
+        }
+    ],
+    "NETWORK_IDS": [
+        {
+            "TOPIC_NAME": "rt/FlushHandle",
+            "CYCLE_RULE": [
+                {
+                    "LOW": "186",
+                    "HIGH": "226",
+                    "RULE_ID": "4",
+                    "severity": "medium"
+                }
+            ]
+        },
+        {
+            "TOPIC_NAME": "COMMON",
+            "RTPS_HEADER_RULE": [
+                {
+                    "RULE_ID": "3",
+                    "severity": "medium",
+                    "VENDOR_ID": [
+                        {
+                            "FAST_DDS": "271"
+                        },
+                        {
+                            "CYCLONE_DDS": "272"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,3 @@
+# Autoware 차량 제어 메시지 리스트 사양서
+VelocityReport.msg:https://raw.githubusercontent.com/autowarefoundation/autoware_msgs/bb8e7bf5d97168663e0e7b357929e4fcdbd3a967/autoware_vehicle_msgs/msg/VelocityReport.msg
+TurnIndicatorsReport.msg:https://raw.githubusercontent.com/autowarefoundation/autoware_msgs/bb8e7bf5d97168663e0e7b357929e4fcdbd3a967/autoware_vehicle_msgs/msg/TurnIndicatorsReport.msg
