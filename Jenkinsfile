@@ -67,6 +67,9 @@ pipeline {
           conan install . --build=missing \
             -s build_type=Release \
             -s compiler.cppstd=gnu17
+          conan lock create . \
+            -s build_type=Release \
+            -s compiler.cppstd=gnu17
           cmake -S . -B build/Release \
             -DCMAKE_BUILD_TYPE=Release \
             -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
