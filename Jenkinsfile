@@ -2,7 +2,9 @@
 
 pipeline {
   agent {
-    node {
+    docker {
+      image 'dds-ids-builder:latest'
+      args '-u root'
       label ''
       customWorkspace "/workspace/dds-ids"
     }
